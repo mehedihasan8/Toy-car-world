@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active {
+  @apply font-medium tracking-wide text-[#fe5b29] transition-colors duration-200 hover:text-[#f4592a];
+}
+
+.default {
+  @apply font-medium tracking-wide text-white transition-colors duration-200 hover:text-[#f4592a];
+}
+
+.custom-btn {
+  @apply h-11 px-6  mx-auto mb-1 font-medium text-black transition duration-200 rounded shadow-md border-none bg-white hover:bg-white hover:text-black;
+}
