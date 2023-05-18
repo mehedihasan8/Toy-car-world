@@ -7,7 +7,7 @@ const ToyDetails = () => {
     carToys;
   console.log(carToys);
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 md:flex items-center">
+    <div className=" rounded-lg  p-8 md:flex items-center">
       <div className="md:w-1/2">
         <img src={picture} alt={toyName} className="w-full h-auto" />
       </div>

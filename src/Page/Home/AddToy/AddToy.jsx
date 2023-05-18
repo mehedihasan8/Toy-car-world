@@ -117,7 +117,7 @@ const AddToy = () => {
             </div>
           </div>
           <div className="flex mx-auto gap-x-5 p-5 ">
-            <div className="form-control w-2/4 mx-auto">
+            {/* <div className="form-control w-2/4 mx-auto">
               <label className="label">
                 <span className="">Your Toy Category</span>
               </label>
@@ -129,6 +129,17 @@ const AddToy = () => {
                   className="input text-black input-bordered w-full "
                 />
               </label>
+            </div> */}
+            <div className="form-control text-black w-2/4 mx-auto">
+              <div className="">
+                <select className="select select-bordered">
+                  <option disabled selected>
+                    Pick category
+                  </option>
+                  <option>T-shirts</option>
+                  <option>Mugs</option>
+                </select>
+              </div>
             </div>
             <div className="form-control w-2/4 mx-auto">
               <label className="label">
