@@ -5,7 +5,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("car.json")
+    fetch("http://localhost:5000/totalData", {})
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -17,7 +17,7 @@ const AllToys = () => {
       <h1 className=" text-6xl font-bold text-center my-10">All toys</h1>
       <div className="my-cunstom-container  grid grid-cols-1 lg:grid-cols-3 gap-5">
         {toys.map((toy) => (
-          <Toy toy={toy}></Toy>
+          <Toy key={toy._id} toy={toy}></Toy>
         ))}
       </div>
     </div>

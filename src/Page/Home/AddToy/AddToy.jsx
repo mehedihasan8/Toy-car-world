@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -30,13 +31,33 @@ const AddToy = () => {
       quantity,
     };
     console.log(addNewToy);
+
+    fetch("http://localhost:5000/addtoy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addNewToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Add  Successfull !",
+            text: "Do you want to continue",
+            icon: "success",
+            confirmButtonText: "ok",
+          });
+        }
+      });
   };
 
   return (
     <div className=" pt-1">
       <h1 className="text-center font-extrabold text-4xl my-7">Add New Toy</h1>
       <form onSubmit={handelAddCoffee}>
-        <div className=" w-2/4 bg-[#f65829] rounded-xl p-3 my-10 mx-auto text-white">
+        <div className=" w-3/4 bg-[#f65829] rounded-xl p-3 my-10 mx-auto text-white">
           <div className="flex mx-auto gap-x-5  p-5 ">
             <div className="form-control w-2/4 mx-auto">
               <label className="label">
@@ -105,7 +126,7 @@ const AddToy = () => {
                   type="text"
                   name="category"
                   placeholder="Enter Your Toy Category"
-                  className="input text-black input-bordered w-full"
+                  className="input text-black input-bordered w-full "
                 />
               </label>
             </div>
@@ -162,7 +183,7 @@ const AddToy = () => {
               ></textarea>
             </div>
           </div>
-          <div className=" w-2/6 mx-auto pb-4">
+          <div className=" my-3 text-center">
             <input type="submit" value="Add New Toy" className="custom-btn" />
           </div>
         </div>

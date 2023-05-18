@@ -64,7 +64,6 @@ const Login = () => {
   const loginWithGoogle = () => {
     handelGoogleLogin()
       .then((result) => {
-        console.log(result.user);
         Swal.fire({
           title: "Login Successfull !",
           text: "Do you want to continue",

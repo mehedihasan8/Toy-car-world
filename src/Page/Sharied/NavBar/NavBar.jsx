@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { FaAlignJustify, FaRegTimesCircle } from "react-icons/fa";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const NavBar = () => {
@@ -19,7 +20,7 @@ const NavBar = () => {
           {/* Logo Section */}
           <Link to="/" className="">
             <span className="mb-3 text-xl sm:text-2xl  font-bold tracking-wide uppercase">
-              Cars <span className="  text-[#f65829] ">Word</span>
+              Cars <span className="  text-[#f65829] ">World</span>
             </span>
           </Link>
 
@@ -35,11 +36,25 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/d"
+                to="/alltoys"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
-                My Toy
+                All Toys
               </NavLink>
+            </li>
+            <li>
+              {user ? (
+                <NavLink
+                  to="/addtoy"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  Add Toy
+                </NavLink>
+              ) : (
+                ""
+              )}
             </li>
             <li>
               <NavLink
@@ -49,13 +64,20 @@ const NavBar = () => {
                 Blog
               </NavLink>
             </li>
+
             <li>
-              <NavLink
-                to="/addtoy"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                Add Toy
-              </NavLink>
+              {user ? (
+                <NavLink
+                  to="/mytoys"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "default"
+                  }
+                >
+                  My Toys
+                </NavLink>
+              ) : (
+                ""
+              )}
             </li>
 
             <li>
@@ -101,7 +123,7 @@ const NavBar = () => {
               title="Open Menu"
               onClick={() => setIsOpen(true)}
             >
-              <p>Open</p>
+              <FaAlignJustify className="h-7 w-7"></FaAlignJustify>
             </button>
             {isOpen && (
               <div className="absolute top-0 left-0 w-full z-10">
@@ -111,7 +133,7 @@ const NavBar = () => {
                     <div>
                       <Link to="/">
                         <span className="mb-6 text-2xl font-bold tracking-wide text-white uppercase">
-                          care <span className=" text-[#f65829] ">Word</span>
+                          care <span className=" text-[#f65829] ">World</span>
                         </span>
                       </Link>
                     </div>
@@ -121,7 +143,7 @@ const NavBar = () => {
                       title="Close Menu"
                       onClick={() => setIsOpen(false)}
                     >
-                      <p>x</p>
+                      <FaRegTimesCircle className="h-7 w-7" />
                     </button>
                   </div>
                   {/* Mobile NavBar Items Section */}
@@ -156,6 +178,20 @@ const NavBar = () => {
                         >
                           Blog
                         </NavLink>
+                      </li>
+                      <li>
+                        {user ? (
+                          <NavLink
+                            to="/mytoys"
+                            className={({ isActive }) =>
+                              isActive ? "active" : "default"
+                            }
+                          >
+                            My Toys
+                          </NavLink>
+                        ) : (
+                          ""
+                        )}
                       </li>
 
                       <li>

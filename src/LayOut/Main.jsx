@@ -4,7 +4,6 @@ import { useEffect } from "react";
 
 const Main = () => {
   const location = useLocation();
-  console.log(location);
 
   useEffect(() => {
     if (location.pathname === "/") {
