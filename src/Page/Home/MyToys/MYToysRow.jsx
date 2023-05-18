@@ -1,8 +1,8 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 
-const MYToysRow = ({ t }) => {
-  const { toyName, picture, price, quantity, rating } = t;
+const MYToysRow = ({ t, handleDelete }) => {
+  const { toyName, picture, price, quantity, rating, _id } = t;
   return (
     <tr className="">
       <th className="text-left">
