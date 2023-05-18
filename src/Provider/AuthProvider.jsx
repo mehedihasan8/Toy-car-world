@@ -63,6 +63,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     loginUser,
     setReload,
+    loading,
     upDateUser,
     registerUser,
     handelGoogleLogin,
