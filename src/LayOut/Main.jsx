@@ -8,15 +8,16 @@ const Main = () => {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      document.title = `Car Word - Home`;
+      document.title = `Car World - Home`;
     } else {
-      document.title = `Car Word ${location.pathname.replace("/", "- ")}`;
+      document.title = `Car World ${location.pathname.replace("/", "- ")}`;
     }
 
     if (location.state) {
       document.title = location.state;
     }
   }, [location.pathname]);
+
   return (
     <div>
       <NavBar />

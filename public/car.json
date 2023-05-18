@@ -1,0 +1,168 @@
+[
+  {
+    "photo": "https://img.freepik.com/free-vector/cartoon-bumper-car-white-background_1308-107878.jpg?size=626&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "Super Speed Racer",
+    "price": 19.99,
+    "ratings": 4.5,
+    "category": "Sports Car"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-vector/orange-cartoon-race-car-side-view_78072-1038.jpg?size=626&ext=jpg&ga=GA1.2.801161237.1677041289&semt=ais",
+    "name": "Turbocharged Speedster",
+    "price": 24.99,
+    "ratings": 4.6,
+    "category": "Sports Car"
+  },
+  {
+    "photo": "https://img.freepik.com/free-vector/isometric-vehicle_24877-50905.jpg?size=338&ext=jpg&ga=GA1.2.801161237.1677041289&semt=ais",
+    "name": "Race Track Champion",
+    "price": 22.99,
+    "ratings": 4.9,
+    "category": "Sports Car"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-vector/illustration-red-sport-car-toy-withe-background_714605-739.jpg?size=338&ext=jpg&ga=GA1.2.801161237.1677041289&semt=ais",
+    "name": "Drift Master",
+    "price": 26.99,
+    "ratings": 4.5,
+    "category": "Sports Car"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-vector/bright-yellow-racing-car-with-spoiler-tinted-windows-fast-sports-automobile-with-tongue-flame-flat-vector-mobile-game_223337-7325.jpg?size=338&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "Turbo Boosted GT",
+    "price": 23.99,
+    "ratings": 4.6,
+    "category": "Sports Car"
+  },
+
+  {
+    "photo": "https://img.freepik.com/premium-photo/dump-track-toy-loaded-with-blocks_470606-615.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Monster Truck Madness",
+    "price": 29.99,
+    "ratings": 4.2,
+    "category": "Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-photo/toys-collection-isolated-white-background_51530-3475.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Extreme Off-Roader",
+    "price": 37.99,
+    "ratings": 4.8,
+    "category": "Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/free-vector/vector-yellow-dump-truck-unloading-side-view-illustration-isolated-white-background_8130-972.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Mega Hauler",
+    "price": 39.99,
+    "ratings": 4.4,
+    "category": "Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-photo/large-plastic-toy-truck-isolated-white-background_168508-1408.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Mud Slinger",
+    "price": 31.99,
+    "ratings": 4.4,
+    "category": "Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-photo/dump-truck-toy-downloading-colorful-blocks-isolated-white_470606-620.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Off-Road Beast",
+    "price": 34.99,
+    "ratings": 4.8,
+    "category": "Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-vector/winter-christmas-new-year-red-car-with-gifts_217290-209.jpg?size=338&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "City Cruiser",
+    "price": 14.99,
+    "ratings": 4.7,
+    "category": "Regular Car"
+  },
+
+  {
+    "photo": "https://img.freepik.com/premium-vector/smiling-red-car-cartoon-white_29190-4845.jpg?size=626&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "Family Fun Sedan",
+    "price": 17.99,
+    "ratings": 4.3,
+    "category": "Regular Car"
+  },
+
+  {
+    "photo": "https://img.freepik.com/premium-vector/car-with-purchased-goods-flat-color-vector-object-auto-with-bags-from-seasonal-sale-automobile-family-shopping-isolated-cartoon_151150-3738.jpg?size=626&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "Classic Vintage Ride",
+    "price": 21.99,
+    "ratings": 4.7,
+    "category": "Regular Car"
+  },
+
+  {
+    "photo": "https://img.freepik.com/free-vector/isometric-vehicle_24877-50905.jpg?size=338&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "Road Trip Companion",
+    "price": 19.99,
+    "ratings": 4.2,
+    "category": "Regular Car"
+  },
+
+  {
+    "photo": "https://img.freepik.com/premium-vector/toy-car-cartoon-vector-illustration_750364-1241.jpg?size=338&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "Convertible Joyride",
+    "price": 16.99,
+    "ratings": 4.3,
+    "category": "Regular Car"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-vector/red-fire-truck-with-outline-vector-illustration-cartoon-childish-style-isolated-funny-clipart_456865-1940.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Rescue Helicopter Squad",
+    "price": 17.99,
+    "ratings": 4.0,
+    "category": "Mini Fire Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/free-vector/emergency-ambulance-white-background_1308-103282.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Rescue Chopper",
+    "price": 14.99,
+    "ratings": 4.1,
+    "category": "Mini Fire Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-photo/3d-illustration-red-firefighter-car-emergency-vehicle-white-background_116124-10877.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Rescue Squad Hero",
+    "price": 16.99,
+    "ratings": 4.3,
+    "category": "Mini Fire Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-photo/toys-fire-truck-isolated-white-background_41158-16757.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Rescue Hero Fire Truck",
+    "price": 15.99,
+    "ratings": 4.1,
+    "category": "Mini Fire Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-vector/blue-sedan-toy-cute-car-icon_178650-7519.jpg?size=338&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "Mini Fire Truck",
+    "price": 12.99,
+    "ratings": 4.0,
+    "category": "Mini Fire Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-photo/3d-illustration-red-firefighter-car-emergency-vehicle-white-background_116124-10877.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Rescue Squad Hero",
+    "price": 16.99,
+    "ratings": 4.3,
+    "category": "Mini Fire Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-photo/toys-fire-truck-isolated-white-background_41158-16757.jpg?size=626&ext=jpg&ga=GA1.1.171809409.1662813605&semt=ais",
+    "name": "Rescue Hero Fire Truck",
+    "price": 15.99,
+    "ratings": 4.1,
+    "category": "Mini Fire Truck"
+  },
+  {
+    "photo": "https://img.freepik.com/premium-vector/blue-sedan-toy-cute-car-icon_178650-7519.jpg?size=338&ext=jpg&ga=GA1.1.801161237.1677041289&semt=ais",
+    "name": "Mini Fire Truck",
+    "price": 12.99,
+    "ratings": 4.0,
+    "category": "Mini Fire Truck"
+  }
+]

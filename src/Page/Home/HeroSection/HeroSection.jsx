@@ -8,7 +8,7 @@ const HeroSection = () => {
         height: "100vh",
         width: "100%",
         float: "right",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         backgroundSize: "100%",
         backgroundRepeat: "no-repeat",
       }}
