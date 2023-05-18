@@ -18,7 +18,7 @@ const NavBar = () => {
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
           <Link to="/" className="">
-            <span className="ml-2 mb-3 text-xl sm:text-2xl  font-bold tracking-wide uppercase">
+            <span className="mb-3 text-xl sm:text-2xl  font-bold tracking-wide uppercase">
               Cars <span className="  text-[#f65829] ">Word</span>
             </span>
           </Link>
