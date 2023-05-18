@@ -1,8 +1,9 @@
 import React from "react";
+import { FaArrowCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Toy = ({ toy }) => {
-  const { picture, toyName, price } = toy;
+  const { picture, toyName, price, _id } = toy;
   console.log(toy);
 
   return (
@@ -17,9 +18,11 @@ const Toy = ({ toy }) => {
         <div className="flex items-center justify-between">
           <p className="text-[#FF3811]">ratings: $ {price}</p>
           <div className="card-actions">
-            {/* <Link to={`/checkout/${_id}`}><button className=" btn btn-circle bg-[#FF3811]">Buy Now</button></Link> */}
-            <Link>
-              <button className=" btn btn-circle bg-[#FF3811]">Buy Now</button>
+            <Link to={`/toydetails/${_id}`}>
+              <button className=" btn btn-circle rounded-full bg-[#FF3811]">
+                {" "}
+                <FaArrowCircleRight className=" w-5 h-5 text-white " />{" "}
+              </button>
             </Link>
           </div>
         </div>

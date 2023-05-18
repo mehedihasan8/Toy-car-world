@@ -6,6 +6,7 @@ import SignUp from "../Page/Home/SignUp/SignUp";
 import AddToy from "../Page/Home/AddToy/AddToy";
 import AllToys from "../Page/Home/AllToys/AllToys";
 import MyToys from "../Page/Home/MyToys/MyToys";
+import ToyDetails from "../Page/Home/ToyDetails/ToyDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
       {
         path: "/mytoys",
         element: <MyToys />,
+      },
+      {
+        path: "/toydetails/:id",
+        element: <ToyDetails />,
+        loader: async ({ params }) =>
+          await fetch(`http://localhost:5000/toydetails/${params.id}`),
       },
     ],
   },
