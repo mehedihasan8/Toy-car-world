@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MYToysRow = ({ t, handleDelete }) => {
   const { toyName, picture, price, quantity, rating, _id } = t;
@@ -28,7 +29,9 @@ const MYToysRow = ({ t, handleDelete }) => {
       <td></td>
       <td>Available Quantity: {quantity}</td>
       <th className="p-0 text-left">
-        <button className="btn btn-xs">Update</button>
+        <Link to={`/updatetoy/${_id}`}>
+          <button className="btn btn-xs">Update</button>
+        </Link>
       </th>
     </tr>
   );

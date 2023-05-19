@@ -9,7 +9,7 @@ const PrivateRoutes = ({ children }) => {
     return (
       <div className="text-4xl my-64 text-center font-extrabold">
         {" "}
-        Loadding.....
+        Loading...
       </div>
     );
   }

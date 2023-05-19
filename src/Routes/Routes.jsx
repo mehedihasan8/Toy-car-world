@@ -8,6 +8,7 @@ import AllToys from "../Page/Home/AllToys/AllToys";
 import MyToys from "../Page/Home/MyToys/MyToys";
 import ToyDetails from "../Page/Home/ToyDetails/ToyDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import UpDateToy from "../Page/Home/UpDateToy/UpDateToy";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +36,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/mytoys",
-        element: <MyToys />,
+        element: (
+          <PrivateRoutes>
+            {" "}
+            <MyToys />,
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/toydetails/:id",
@@ -46,6 +52,12 @@ const router = createBrowserRouter([
         ),
         loader: async ({ params }) =>
           await fetch(`http://localhost:5000/toydetails/${params.id}`),
+      },
+      {
+        path: "/updatetoy/:id",
+        element: <UpDateToy />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/mytoy/${params.id}`),
       },
     ],
   },

@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
-  console.log(user?.email);
+  // console.log(user?.email);
   const url = `http://localhost:5000/mytoy?email=${user?.email}`;
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const MyToys = () => {
     });
   };
 
-  console.log(myToys);
+  // console.log(myToys);
   return (
     <div>
       <div className="overflow-x-auto w-full my-cunstom-container">
