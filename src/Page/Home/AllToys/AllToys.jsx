@@ -3,6 +3,7 @@ import Toy from "./Toy";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:5000/totalData")
@@ -12,15 +13,26 @@ const AllToys = () => {
       });
   }, []);
 
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/searchByName/${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setToys(data);
+      });
+  };
+
   return (
     <div className="my-10">
       <h1 className=" text-6xl font-bold text-center my-10">All toys</h1>
       <div className="my-cunstom-container text-center  bg-[#f65829] ">
         <input
           type="text"
+          onChange={(event) => setSearchText(event.target.value)}
           placeholder="Type here"
           className="input w-full max-w-lg "
         />
+        <button onClick={handleSearch}>Search</button>
       </div>
       <div className="my-cunstom-container  grid grid-cols-1 lg:grid-cols-3 gap-5">
         {toys.map((toy) => (
