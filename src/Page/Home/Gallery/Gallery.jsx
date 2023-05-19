@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
+import "aos/dist/aos.css";
 
 import img1 from "../../../assets/images/img6.jpeg";
 import img2 from "../../../assets/images/img2.jpeg";
@@ -11,72 +12,43 @@ import img7 from "../../../assets/images/img7.jpeg";
 import img8 from "../../../assets/images/img8.jpeg";
 import img9 from "../../../assets/images/img9.jpeg";
 
+const myImages = [img1, img2, img3, img4, img5, img7, img8, img9, img6];
+
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <>
       <div>
-        <div data-aos="fade-up" data-aos-anchor=".other-element">
-          <h1 className="text-center font-extrabold text-6xl mb-7">
+        <div data-aos="fade-up" data-aos-anchor="other-element">
+          <h1
+            data-aos="fade-right"
+            className="text-center font-extrabold text-6xl mb-7"
+          >
             Some New Toy's
           </h1>
-        </div>
-        <div
-          data-aos="fade-in"
-          className="my-cunstom-container   grid grid-cols-1 lg:grid-cols-3 text-center gap-4 "
-        >
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img1}
-            alt=""
-          />
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img2}
-            alt=""
-          />
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img3}
-            alt=""
-          />
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img4}
-            alt=""
-          />
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img5}
-            alt=""
-          />
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img6}
-            alt=""
-          />
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img7}
-            alt=""
-          />
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img8}
-            alt=""
-          />
-          <img
-            className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
-            src={img9}
-            alt=""
-          />
+          <div className="my-cunstom-container   grid grid-cols-1 lg:grid-cols-3 text-center gap-4 ">
+            {myImages.map((img) => (
+              <img
+                data-aos="zoom-in-down"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
+                className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]"
+                src={img}
+                alt=""
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>
   );
 };
-AOS.init({
-  useClassNames: true,
-  initClassName: false,
-  animatedClassName: "animated",
-});
+// AOS.init({
+//   useClassNames: true,
+//   initClassName: false,
+//   animatedClassName: "animated",
+// });
 export default Gallery;

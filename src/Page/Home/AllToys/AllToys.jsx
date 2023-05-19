@@ -32,7 +32,9 @@ const AllToys = () => {
           placeholder="Type here"
           className="input w-full max-w-lg "
         />
-        <button onClick={handleSearch}>Search</button>
+        <button className="btn" onClick={handleSearch}>
+          Search
+        </button>
       </div>
       <div className="my-cunstom-container  grid grid-cols-1 lg:grid-cols-3 gap-5">
         {toys.map((toy) => (

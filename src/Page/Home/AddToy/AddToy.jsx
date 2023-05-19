@@ -1,11 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-const options = [
-  { value: "Sports-car", label: "Sports-car" },
-  { value: "Truck", label: "Truck" },
-  { value: "Regular-car", label: "Regular-car" },
-];
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -14,8 +9,6 @@ const AddToy = () => {
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
-
-  console.log(selectedOption);
 
   const handelAddCoffee = (event) => {
     event.preventDefault();
@@ -54,7 +47,7 @@ const AddToy = () => {
         console.log(data);
         if (data.insertedId) {
           Swal.fire({
-            title: "Add  Successfull !",
+            title: "Toy Add Successfull !",
             text: "Do you want to continue",
             icon: "success",
             confirmButtonText: "ok",
@@ -154,16 +147,21 @@ const AddToy = () => {
               </label>
             </div> */}
 
-            <select
-              value={selectedOption}
-              className="form-control w-2/4 mx-auto mt-10 py-3 px-2 rounded-md text-black"
-              onChange={handleOptionChange}
-            >
-              <option value="">Select Your Toy Cetegor</option>
-              <option value="Sports-car">Sports-car</option>
-              <option value="Truck">Truck</option>
-              <option value="Regular-car">Regular-car</option>
-            </select>
+            <div className=" w-2/4">
+              <label className="label">
+                <span className="">Select Your Toy Cetegor</span>
+              </label>
+              <select
+                value={selectedOption}
+                placeholder="Select Your Toy Cetegor"
+                className="form-control mx-auto w-full  py-3 px-2 rounded-md text-black"
+                onChange={handleOptionChange}
+              >
+                <option value="Sports-car">Sports-car</option>
+                <option value="Truck">Truck</option>
+                <option value="Regular-car">Regular-car</option>
+              </select>
+            </div>
           </div>
           <div className="flex mx-auto gap-x-5 p-5 ">
             <div className="form-control w-2/4 mx-auto">
