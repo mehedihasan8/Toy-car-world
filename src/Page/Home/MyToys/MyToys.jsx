@@ -54,6 +54,7 @@ const MyToys = () => {
         <h1 className="text-center my-5 font-extrabold text-[#fe5724] text-4xl">
           Your Total Toy : {myToys.length}
         </h1>
+
         <table className=" w-full">
           <tbody>
             {myToys.map((t) => (
