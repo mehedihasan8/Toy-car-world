@@ -79,42 +79,45 @@ const NavBar = () => {
                 ""
               )}
             </li>
-
-            <li>
-              {user ? (
-                <div
-                  className="tooltip tooltip-bottom"
-                  data-tip={user.displayName}
-                >
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src={user.photoURL}
-                    alt="photo"
-                  />
-                </div>
-              ) : (
-                <NavLink
-                  to="/login"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "default"
-                  }
-                >
-                  login
-                </NavLink>
-              )}
-            </li>
-            <li>
-              {user ? (
-                <button className="custom-btn" onClick={handelLogOut}>
-                  log out
-                </button>
-              ) : (
-                <Link to="/signup">
-                  <button className="custom-btn">Sign Up</button>
-                </Link>
-              )}
-            </li>
           </ul>
+          <div>
+            <ul className="hidden space-x-4 lg:flex items-center">
+              <li>
+                {user ? (
+                  <div
+                    className="tooltip tooltip-bottom"
+                    data-tip={user.displayName}
+                  >
+                    <img
+                      className="h-10 w-10 rounded-full"
+                      src={user.photoURL}
+                      alt="photo"
+                    />
+                  </div>
+                ) : (
+                  <NavLink
+                    to="/login"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                  >
+                    login
+                  </NavLink>
+                )}
+              </li>
+              <li>
+                {user ? (
+                  <button className="custom-btn" onClick={handelLogOut}>
+                    log out
+                  </button>
+                ) : (
+                  <Link to="/signup">
+                    <button className="custom-btn">Sign Up</button>
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </div>
           {/* here is Mobile Navbar Section */}
           <div className="lg:hidden">
             {/* Dropdown  Button Open*/}

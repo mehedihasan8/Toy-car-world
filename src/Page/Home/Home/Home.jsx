@@ -1,3 +1,4 @@
+import Category from "../Category/Category";
 import Gallery from "../Gallery/Gallery";
 import HeroSection from "../HeroSection/HeroSection";
 
@@ -6,6 +7,7 @@ const Home = () => {
     <div className="">
       <HeroSection />
       <Gallery />
+      <Category />
     </div>
   );
 };

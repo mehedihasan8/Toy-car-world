@@ -2,7 +2,7 @@ import img from "../../../assets/images/bg.jpg";
 
 const HeroSection = () => {
   return (
-    <div className=" h-[100vh]  my-cunstom-container lg:flex justify-start items-center">
+    <div className=" h-[550px]  my-cunstom-container lg:flex justify-start items-center">
       <div class="text-center lg:text-left ">
         <h1 class="text-4xl lg:text-7xl font-extrabold space-y-32">
           Toy Buy <br />

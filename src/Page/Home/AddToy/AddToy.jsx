@@ -1,30 +1,40 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+const options = [
+  { value: "Sports-car", label: "Sports-car" },
+  { value: "Truck", label: "Truck" },
+  { value: "Regular-car", label: "Regular-car" },
+];
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  console.log(selectedOption);
 
   const handelAddCoffee = (event) => {
     event.preventDefault();
-
     const form = event.target;
-
     const name = form.name.value;
     const toyName = form.toyName.value;
     const picture = form.picture.value;
     const email = form.email.value;
-    const category = form.category.value;
+    const category = selectedOption;
     const price = form.price.value;
     const message = form.message.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const addNewToy = {
+      category,
       name,
       toyName,
       picture,
       email,
-      category,
       price,
       message,
       rating,
@@ -95,7 +105,7 @@ const AddToy = () => {
                 <input
                   type="text"
                   name="name"
-                  defaultValue={user?.displayName}
+                  value={user?.displayName}
                   placeholder="Enter Your Name"
                   className="input text-black input-bordered w-full"
                 />
@@ -109,38 +119,14 @@ const AddToy = () => {
                 <input
                   type="email"
                   name="email"
-                  defaultValue={user?.email}
+                  value={user?.email}
                   placeholder="Enter email"
                   className="input text-black input-bordered w-full"
                 />
               </label>
             </div>
           </div>
-          <div className="flex mx-auto gap-x-5 p-5 ">
-            {/* <div className="form-control w-2/4 mx-auto">
-              <label className="label">
-                <span className="">Your Toy Category</span>
-              </label>
-              <label className="">
-                <input
-                  type="text"
-                  name="category"
-                  placeholder="Enter Your Toy Category"
-                  className="input text-black input-bordered w-full "
-                />
-              </label>
-            </div> */}
-            <div className="form-control text-black w-2/4 mx-auto">
-              <div className="">
-                <select className="select select-bordered">
-                  <option disabled selected>
-                    Pick category
-                  </option>
-                  <option>T-shirts</option>
-                  <option>Mugs</option>
-                </select>
-              </div>
-            </div>
+          <div className="flex mx-auto items-center gap-x-5 p-5 ">
             <div className="form-control w-2/4 mx-auto">
               <label className="label">
                 <span className="">Your Toy Price</span>
@@ -154,6 +140,30 @@ const AddToy = () => {
                 />
               </label>
             </div>
+            {/* <div className="form-control w-2/4 mx-auto">
+              <label className="label">
+                <span className="">Your Toy Category</span>
+              </label>
+              <label className="">
+                <input
+                  type="text"
+                  name="category"
+                  placeholder="Enter Your Toy Category"
+                  className="input text-black input-bordered w-full "
+                />
+              </label>
+            </div> */}
+
+            <select
+              value={selectedOption}
+              className="form-control w-2/4 mx-auto mt-10 py-3 px-2 rounded-md text-black"
+              onChange={handleOptionChange}
+            >
+              <option value="">Select Your Toy Cetegor</option>
+              <option value="Sports-car">Sports-car</option>
+              <option value="Truck">Truck</option>
+              <option value="Regular-car">Regular-car</option>
+            </select>
           </div>
           <div className="flex mx-auto gap-x-5 p-5 ">
             <div className="form-control w-2/4 mx-auto">
