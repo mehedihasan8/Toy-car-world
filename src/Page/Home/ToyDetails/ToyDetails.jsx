@@ -9,28 +9,43 @@ const ToyDetails = () => {
   return (
     <div className=" rounded-lg  p-8 md:flex items-center">
       <div className="md:w-1/2">
-        <img src={picture} alt={toyName} className="w-full h-auto" />
+        <img src={picture} alt={toyName} className="w-full h-auto " />
       </div>
       <div className="md:w-1/2 md:pl-8">
-        <h2 className="text-2xl text-[#3DC2CA] font-bold mb-4">{toyName}</h2>
+        <h2 className="text-3xl text-[#f65829] font-bold mb-4">
+          Toy Name : {toyName}
+        </h2>
         <p className="text-lg mb-2">
-          <span className="font-semibold">Seller:</span> {name}
+          <span className="font-semibold text-xl text-[#f65829] ">
+            Seller Name{" "}
+          </span>{" "}
+          : {name}
         </p>
         <p className="text-lg mb-2">
-          <span className="font-semibold">Email:</span> {email}
+          <span className="font-semibold text-xl text-[#f65829] ">Email</span> :{" "}
+          {email}
         </p>
         <p className="text-lg mb-2">
-          <span className="font-semibold">Price:</span> $ {price}
+          <span className="font-semibold text-xl text-[#f65829] ">Price </span>{" "}
+          : ${price}
         </p>
         <p className="text-lg mb-2">
-          <span className="font-semibold">Rating:</span> {ratings} : 5
+          <span className="font-semibold text-xl text-[#f65829] ">Rating</span>{" "}
+          {ratings} : 5
         </p>
         <p className="text-lg mb-2">
-          <span className="font-semibold">Available Quantity:</span> {quantity}
+          <span className="font-semibold text-xl text-[#f65829] ">
+            Available Quantity
+          </span>
+          : {quantity}
         </p>
         <div className="mt-4">
-          <h3 className="text-xl font-semibold mb-2">
-            Description : {message}{" "}
+          <h3 className=" mb-2">
+            <span className="font-semibold text-xl text-[#f65829] ">
+              {" "}
+              Description{" "}
+            </span>{" "}
+            : {message}{" "}
           </h3>
         </div>
       </div>

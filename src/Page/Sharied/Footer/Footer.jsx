@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="footer  grid grid-cols-2 lg:grid-cols-4 py-10  pl-10 bg-black text-white ">
-        <div className="pl-6 lg:pl-16">
+        <div className="pl-6 ">
           <span className="footer-title  ">Services</span>
           <a className="link  link-hover">Branding</a>
           <a className="link  link-hover">Design</a>
@@ -35,17 +35,17 @@ const Footer = () => {
         <div className="place-self-center justify-center flex ">
           <div className="grid grid-flow-col gap-4">
             <a>
-              <FaTwitter className="h-8 w-8 text-white" />
+              <FaTwitter className="h-8 w-8 hover:text-[#f65829]  text-white" />
             </a>
             <a>
-              <FaYoutube className="h-8 w-8 text-white" />
+              <FaYoutube className="h-8 w-8 hover:text-[#f65829] text-white" />
             </a>
 
             <a>
-              <FaInstagram className="h-8 w-8 text-white" />
+              <FaInstagram className="h-8 w-8 hover:text-[#f65829] text-white" />
             </a>
             <a>
-              <FaFacebook className="h-8 w-8 text-white" />
+              <FaFacebook className="h-8 w-8  hover:text-[#f65829] text-white" />
             </a>
           </div>
         </div>

@@ -46,9 +46,5 @@ const Gallery = () => {
     </>
   );
 };
-// AOS.init({
-//   useClassNames: true,
-//   initClassName: false,
-//   animatedClassName: "animated",
-// });
+
 export default Gallery;

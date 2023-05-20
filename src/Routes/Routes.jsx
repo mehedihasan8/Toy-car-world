@@ -52,13 +52,15 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: async ({ params }) =>
-          await fetch(`http://localhost:5000/toydetails/${params.id}`),
+          await fetch(
+            `https://toy-car-server-rho.vercel.app/toydetails/${params.id}`
+          ),
       },
       {
         path: "/updatetoy/:id",
         element: <UpDateToy />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/mytoy/${params.id}`),
+          fetch(`https://toy-car-server-rho.vercel.app/mytoy/${params.id}`),
       },
       {
         path: "/blog",

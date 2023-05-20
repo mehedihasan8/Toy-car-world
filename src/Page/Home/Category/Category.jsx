@@ -11,7 +11,7 @@ const Category = () => {
   console.log(activeTabs, tabData);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoyCategory/${activeTabs}`)
+    fetch(`https://toy-car-server-rho.vercel.app/mytoyCategory/${activeTabs}`)
       .then((res) => res.json())
       .then((data) => {
         setTabData(data);

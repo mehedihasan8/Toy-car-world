@@ -1,5 +1,6 @@
 import React from "react";
-import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleRight, FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const CategoryCard = ({ toy }) => {
@@ -10,16 +11,27 @@ const CategoryCard = ({ toy }) => {
         <img src={picture} alt="Shoes" className="rounded-xl" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{toyName}</h2>
-        <p className="text-xl">Price: $ {price}</p>
+        <h2 className="card-title text-2xl font-bold">{toyName}</h2>
+        <div className="flex justify-between my-2">
+          <p className="text-xl font-semibold">Price: $ {price}</p>
+          <p className=" text-center flex items-center">
+            <Rating
+              placeholderRating={rating}
+              emptySymbol={<FaRegStar></FaRegStar>}
+              placeholderSymbol={<FaStar className="text-yellow-400"></FaStar>}
+              fullSymbol={<FaStar></FaStar>}
+              readonly
+            />
+            <span className="font-semibold">Ratings : {rating}</span>
+          </p>
+        </div>
 
-        <div className="flex items-center justify-between">
-          <p className="text-[#FF3811]">ratings: {rating}</p>
+        <div className="flex justify-center my-4">
           <div className="card-actions">
             <Link to={`/toydetails/${_id}`}>
-              <button className=" btn btn-circle rounded-full bg-[#FF3811]">
+              <button className=" btn   w-full bg-[#f65829]">
                 {" "}
-                <FaArrowCircleRight className=" w-5 h-5 text-white " />{" "}
+                See Details
               </button>
             </Link>
           </div>

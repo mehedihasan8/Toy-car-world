@@ -13,7 +13,7 @@ const WhyChose = () => {
   return (
     <div className="bg-[#363636] text-white ">
       <h1
-        data-aos="fade-down"
+        data-aos="fade-right"
         className="text-center text-4xl lg:text-6xl font-extrabold pt-16 pb-10 "
       >
         WHY CHOOSE US
@@ -58,7 +58,7 @@ const WhyChose = () => {
         >
           <img className="h-14 w-12 mx-auto lg:mx-0 mb-3" src={log3} alt="" />
 
-          <h1 className="text-1xl lg:text-3xl font-bold py-4">Best Drivers</h1>
+          <h1 className="text-1xl lg:text-3xl font-bold py-4">Best Service</h1>
           <p className="lg:w-4/5 ">
             variations of passages of Lorem Ipsum available, but the majority
             have

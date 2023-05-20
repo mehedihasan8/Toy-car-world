@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import { FaRegTimesCircle } from "react-icons/fa";
 import MYToysRow from "./MYToysRow";
 import Swal from "sweetalert2";
 
@@ -9,7 +8,7 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   const [sortPrice, setSortPrice] = useState("ascending");
   // console.log(user?.email);
-  const url = `http://localhost:5000/mytoy?email=${user?.email}`;
+  const url = `https://toy-car-server-rho.vercel.app/mytoy?email=${user?.email}`;
 
   console.log(sortPrice);
 
@@ -24,7 +23,7 @@ const MyToys = () => {
   }, [url]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/sortByPrice/${sortPrice}`)
+    fetch(`https://toy-car-server-rho.vercel.app/sortByPrice/${sortPrice}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -43,7 +42,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, Delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mytoy/${_id}`, {
+        fetch(`https://toy-car-server-rho.vercel.app/mytoy/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -61,25 +60,22 @@ const MyToys = () => {
 
   // console.log(myToys);
   return (
-    <div>
+    <div className="bg-slate-200">
       <div className="overflow-x-auto w-full my-cunstom-container">
-        <h1 className="text-center my-5 font-extrabold text-[#fe5724] text-4xl">
-          Your Total Toy : {myToys.length}
-        </h1>
-        <div>
-          <div className="dropdown dropdown-right">
-            <label tabIndex={0} className="btn m-1">
-              Click
+        <div className="flex items-center justify-around my-6">
+          <div className="dropdown dropdown-bottom">
+            <label tabIndex={0} className="btn bg-[#f65829]  m-1">
+              Sort by price
             </label>
             <ul
               tabIndex={0}
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li onClick={() => setSortPrice("ascending")}>
-                <a>ascending</a>
+                <a>Lower to heigh price </a>
               </li>
               <li onClick={() => setSortPrice("dscending")}>
-                <a>dscending</a>
+                <a>heigh to Lower price </a>
               </li>
             </ul>
           </div>
