@@ -35,7 +35,7 @@ const Gallery = () => {
                 data-aos="zoom-in-down"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000"
-                className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px] shadow-sm "
+                className=" p-10 border-red-500 border rounded-lg w-[400px] h-[300px]  "
                 src={img}
                 alt=""
               />

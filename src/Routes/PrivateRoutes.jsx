@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -15,6 +16,15 @@ const PrivateRoutes = ({ children }) => {
   }
   if (user?.email) {
     return children;
+  } else {
+    useEffect(() => {
+      Swal.fire({
+        title: "Warning!",
+        text: "You have to log in first to view details",
+        icon: "warning",
+        confirmButtonText: "OK",
+      });
+    }, []);
   }
   return <Navigate to="/login" state={{ from: location }} replace />;
 };

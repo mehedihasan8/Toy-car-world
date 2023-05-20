@@ -18,7 +18,7 @@ const AddToy = () => {
     const picture = form.picture.value;
     const email = form.email.value;
     const category = selectedOption;
-    const price = form.price.value;
+    const price = parseInt(form.price.value);
     const message = form.message.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;
@@ -127,7 +127,7 @@ const AddToy = () => {
               </label>
               <label className="">
                 <input
-                  type="text"
+                  type="number"
                   name="price"
                   placeholder="Enter Your Toy Price"
                   className="input text-black input-bordered w-full"

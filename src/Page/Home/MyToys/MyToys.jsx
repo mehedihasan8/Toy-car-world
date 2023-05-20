@@ -7,8 +7,11 @@ import Swal from "sweetalert2";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [sortPrice, setSortPrice] = useState("ascending");
   // console.log(user?.email);
   const url = `http://localhost:5000/mytoy?email=${user?.email}`;
+
+  console.log(sortPrice);
 
   useEffect(() => {
     fetch(url, {
@@ -19,6 +22,15 @@ const MyToys = () => {
         setMyToys(data);
       });
   }, [url]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/sortByPrice/${sortPrice}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMyToys(data);
+      });
+  }, [sortPrice]);
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -54,6 +66,24 @@ const MyToys = () => {
         <h1 className="text-center my-5 font-extrabold text-[#fe5724] text-4xl">
           Your Total Toy : {myToys.length}
         </h1>
+        <div>
+          <div className="dropdown dropdown-right">
+            <label tabIndex={0} className="btn m-1">
+              Click
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li onClick={() => setSortPrice("ascending")}>
+                <a>ascending</a>
+              </li>
+              <li onClick={() => setSortPrice("dscending")}>
+                <a>dscending</a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
         <table className=" w-full">
           <tbody>
