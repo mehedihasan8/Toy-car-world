@@ -23,22 +23,55 @@ const Category = () => {
   };
 
   return (
-    <div className="my-cunstom-container mx-auto px-4 py-8  ">
-      <h1 className="text-3xl font-bold mb-4 text-center">Shop by Category</h1>
-      <Tabs selectedIndex={activeTab} onSelect={(index) => setActiveTab(index)}>
-        <TabList>
-          <div className="text-center">
-            <Tab onClick={() => handleTabClick("Sports-car")}>Sports Car</Tab>
-            <Tab onClick={() => handleTabClick("Truck")}>Truck </Tab>
-            <Tab onClick={() => handleTabClick("Regular-car")}>Regular Car</Tab>
-          </div>
-        </TabList>
-        <div className="grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3">
+    <div>
+      <div className="  ">
+        <h1
+          data-aos="fade-up"
+          className=" text-3xl text-center pt-12  lg:text-6xl font-extrabold text-white  bg-[#363636] "
+        >
+          Shop by Category
+        </h1>
+        <p className=" text-center  pt-6 font-semibold text-white  bg-[#363636] ">
+          Using 'Content here, content here', making it look like readable
+        </p>
+        <Tabs
+          className="bg-[#363636]  text-black pb-12  text-center mx-auto pt-4  font-semibold"
+          selectedIndex={activeTab}
+          onSelect={(index) => setActiveTab(index)}
+        >
+          <TabList>
+            <div data-aos="fade-up" className="py-6">
+              <Tab
+                className="btn bg-[#f65829]"
+                onClick={() => handleTabClick("Sports-car")}
+              >
+                See Sports Car
+              </Tab>
+              <Tab
+                className="btn bg-[#f65829] mx-6"
+                onClick={() => handleTabClick("Truck")}
+              >
+                See Truck{" "}
+              </Tab>
+              <Tab
+                className="btn bg-[#f65829] mt-5 "
+                onClick={() => handleTabClick("Regular-car")}
+              >
+                See Regular Car
+              </Tab>
+            </div>
+          </TabList>
+        </Tabs>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          className="my-cunstom-container grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3 mt-12 mb-6"
+        >
           {tabData?.map((toy) => (
             <CategoryCard key={toy._id} toy={toy}></CategoryCard>
           ))}
         </div>
-      </Tabs>
+      </div>
     </div>
   );
 };

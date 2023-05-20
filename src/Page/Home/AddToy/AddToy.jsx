@@ -33,7 +33,7 @@ const AddToy = () => {
       rating,
       quantity,
     };
-    console.log(addNewToy);
+    // console.log(addNewToy);
 
     fetch("http://localhost:5000/addtoy", {
       method: "POST",
@@ -44,7 +44,7 @@ const AddToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Toy Add Successfull !",
@@ -53,6 +53,7 @@ const AddToy = () => {
             confirmButtonText: "ok",
           });
         }
+        form.reset();
       });
   };
 
@@ -133,19 +134,6 @@ const AddToy = () => {
                 />
               </label>
             </div>
-            {/* <div className="form-control w-2/4 mx-auto">
-              <label className="label">
-                <span className="">Your Toy Category</span>
-              </label>
-              <label className="">
-                <input
-                  type="text"
-                  name="category"
-                  placeholder="Enter Your Toy Category"
-                  className="input text-black input-bordered w-full "
-                />
-              </label>
-            </div> */}
 
             <div className=" w-2/4">
               <label className="label">
@@ -157,6 +145,7 @@ const AddToy = () => {
                 className="form-control mx-auto w-full  py-3 px-2 rounded-md text-black"
                 onChange={handleOptionChange}
               >
+                <option value="">Select Your Toy Cetegor</option>
                 <option value="Sports-car">Sports-car</option>
                 <option value="Truck">Truck</option>
                 <option value="Regular-car">Regular-car</option>
