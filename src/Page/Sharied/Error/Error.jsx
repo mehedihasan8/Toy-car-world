@@ -19,7 +19,7 @@ const Error = () => {
           href="/"
           className="bg-[#f65829] hover:bg-[#f65829] text-white font-bold py-2 px-4 rounded"
         >
-          Go to Homepage
+          Go to Home
         </Link>
       </div>
     </div>
