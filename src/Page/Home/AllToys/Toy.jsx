@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Toy = ({ toy, index }) => {
   const { category, toyName, name, price, _id, quantity } = toy;
-  // console.log(toy);
 
   return (
     <tr className="my-6">
@@ -16,11 +15,11 @@ const Toy = ({ toy, index }) => {
       <td>
         <span className="ml-14">{quantity} Pcs </span>
       </td>
-      <td>
+      <td className="text-right">
         <Link to={`/toydetails/${_id}`} state={toyName}>
-          <div className="flex gap-x-4 text-center">
+          <div className="flex gap-x-2 text-center btn-link">
             <span className="">Viewo Details</span>{" "}
-            <FaArrowCircleRight className=" w-7 h-7  text-[#f65829]" />
+            <FaArrowCircleRight className=" w-6 h-6 " />
           </div>
         </Link>
       </td>

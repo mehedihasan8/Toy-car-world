@@ -8,8 +8,6 @@ const Category = () => {
   const [activeTabs, setActiveTabs] = useState("Sports-car");
   const [tabData, setTabData] = useState([]);
 
-  console.log(activeTabs, tabData);
-
   useEffect(() => {
     fetch(`https://toy-car-server-rho.vercel.app/mytoyCategory/${activeTabs}`)
       .then((res) => res.json())

@@ -98,7 +98,7 @@ const SignUp = () => {
           <h1 className="text-center text-[#f65829] text-4xl font-bold mb-3">
             Register
           </h1>
-          <div className="bg-[#f65829] text-white px-11 py-12 rounded-md">
+          <div className="bg-[#f65829]  text-white px-11 py-12 rounded-md">
             <form onSubmit={handelSignIn}>
               <div>
                 <label className="mt-32" htmlFor="">

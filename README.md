@@ -32,7 +32,7 @@
 
 ## Api Link
 
-- Hosted in Varcel -> [Car World Api Link ](https://toy-car-server-rho.vercel.app/)
+- Hosted in Varcel -> [Car World Api Link ](https://toy-car-server-rho.vercel.app/totalData)
 
 ## Installation
 

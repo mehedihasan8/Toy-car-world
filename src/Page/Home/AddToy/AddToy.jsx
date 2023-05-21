@@ -33,7 +33,6 @@ const AddToy = () => {
       rating,
       quantity,
     };
-    // console.log(addNewToy);
 
     fetch("https://toy-car-server-rho.vercel.app/addtoy", {
       method: "POST",
@@ -44,7 +43,6 @@ const AddToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Toy Add Successfull !",
@@ -61,7 +59,7 @@ const AddToy = () => {
     <div className=" pt-1">
       <h1 className="text-center font-extrabold text-4xl my-7">Add New Toy</h1>
       <form onSubmit={handelAddCoffee}>
-        <div className=" w-3/4 bg-[#f65829] rounded-xl p-3 my-10 mx-auto text-white">
+        <div className=" w-4/5 bg-[#f65829] rounded-xl p-3 my-10 mx-auto text-white">
           <div className="flex mx-auto gap-x-5  p-5 ">
             <div className="form-control w-2/4 mx-auto">
               <label className="label">
@@ -187,7 +185,7 @@ const AddToy = () => {
                 id=""
                 rows="5"
                 placeholder="Toy Description"
-                className="text-black text-center  rounded-xl"
+                className="text-black p-4 rounded-xl"
               ></textarea>
             </div>
           </div>

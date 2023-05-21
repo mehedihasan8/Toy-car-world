@@ -2,20 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import MYToysRow from "./MYToysRow";
 import Swal from "sweetalert2";
+import Loadinge from "../../Sharied/Loadinge/Loadinge";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
-  const [sortPrice, setSortPrice] = useState("ascending");
-  // console.log(user?.email);
+  const [sortPrice, setSortPrice] = useState("");
+
   const url = `https://toy-car-server-rho.vercel.app/mytoy?email=${user?.email}`;
 
-  console.log(sortPrice);
-
   useEffect(() => {
-    fetch(url, {
-      method: "GET",
-    })
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -24,11 +21,10 @@ const MyToys = () => {
 
   useEffect(() => {
     fetch(
-      `https://toy-car-server-rho.vercel.app/sortByPrice/${sortPrice}?email=${user?.email}`
+      `https://toy-car-server-rho.vercel.app/mytoys/${sortPrice}?email=${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMyToys(data);
       });
   }, [sortPrice]);
@@ -49,7 +45,6 @@ const MyToys = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
               const remening = myToys.filter((toy) => toy._id !== _id);
@@ -59,8 +54,9 @@ const MyToys = () => {
       }
     });
   };
-
-  // console.log(myToys);
+  if (!myToys.length) {
+    return <Loadinge></Loadinge>;
+  }
   return (
     <div className="bg-slate-200">
       <div className=" w-full my-cunstom-container">
