@@ -30,8 +30,9 @@ const Gallery = () => {
             Some New Toy's
           </h1>
           <div className="my-cunstom-container   grid grid-cols-1 lg:grid-cols-3 text-center gap-4 ">
-            {myImages.map((img) => (
+            {myImages.map((img, i) => (
               <img
+                key={i}
                 data-aos="zoom-in-down"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000"

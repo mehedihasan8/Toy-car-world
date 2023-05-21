@@ -185,9 +185,9 @@ const AddToy = () => {
               <textarea
                 name="message"
                 id=""
-                rows=""
+                rows="5"
                 placeholder="Toy Description"
-                className="text-black text-center py-10 rounded-xl"
+                className="text-black text-center  rounded-xl"
               ></textarea>
             </div>
           </div>

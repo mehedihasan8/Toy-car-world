@@ -21,7 +21,9 @@ const Main = () => {
   return (
     <div>
       <NavBar />
-      <Outlet />
+      <div className="min-h-screen">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

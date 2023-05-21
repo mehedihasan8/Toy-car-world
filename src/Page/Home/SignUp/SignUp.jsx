@@ -5,8 +5,6 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const SignUp = () => {
   const { registerUser, upDateUser, setReload } = useContext(AuthContext);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
   const handelSignIn = (event) => {
@@ -18,11 +16,7 @@ const SignUp = () => {
     const image = form.file.value;
     const password = form.password.value;
 
-    setSuccess("");
-    setError("");
-
     if (!email || !password || !name || !image) {
-      setError("Must be fillup all Criteria ");
       Swal.fire({
         title: "Must be fillup all Criteria",
         text: "Do you want to continue",
@@ -34,7 +28,6 @@ const SignUp = () => {
     }
 
     if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-      setError("At least two capital letters");
       Swal.fire({
         title: "At least two capital letters",
         text: "Do you want to continue",
@@ -44,7 +37,6 @@ const SignUp = () => {
 
       return;
     } else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
-      setError("At least two numeric digits");
       Swal.fire({
         title: "At least two numeric digits",
         text: "Do you want to continue",
@@ -53,7 +45,6 @@ const SignUp = () => {
       });
       return;
     } else if (password.length < 6) {
-      setError("At least more then 6 numbers ");
       Swal.fire({
         title: "At least more then 6 numbers",
         text: "Do you want to continue",
@@ -72,7 +63,6 @@ const SignUp = () => {
               setReload(new Date().getTime());
             })
             .catch((error) => {
-              setError(error.message);
               Swal.fire({
                 title: `${error.message}`,
                 text: "Do you want to continue",
@@ -86,13 +76,12 @@ const SignUp = () => {
             icon: "success",
             confirmButtonText: "ok",
           });
-          setSuccess("Account create Success");
+
+          form.reset();
 
           navigate("/");
-          console.log(result.user);
         })
         .catch((err) => {
-          setError(err.message);
           Swal.fire({
             title: `${err.message}`,
             text: "Do you want to continue",
@@ -104,7 +93,7 @@ const SignUp = () => {
   };
   return (
     <div className="py-6">
-      <div className="flex justify-center align-center">
+      <div className="flex justify-center ">
         <div className=" ">
           <h1 className="text-center text-[#f65829] text-4xl font-bold mb-3">
             Register
@@ -156,9 +145,7 @@ const SignUp = () => {
                   placeholder="Enter your password"
                 />
               </div>
-              <p className=" text-red-600 font-semibold"> {error}</p>
-              <p className="mb-3 text-emerald-600 font-semibold">{success}</p>
-              <button className="custom-btn">Register</button>
+              <button className="custom-btn mt-4">Register</button>
               <p className="p-2 mt-3 text-white font-semibold">
                 You hava an account ?
                 <Link className=" mr-1 text-white btn-link" to="/login">

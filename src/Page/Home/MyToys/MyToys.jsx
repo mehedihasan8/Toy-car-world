@@ -23,7 +23,9 @@ const MyToys = () => {
   }, [url]);
 
   useEffect(() => {
-    fetch(`https://toy-car-server-rho.vercel.app/sortByPrice/${sortPrice}`)
+    fetch(
+      `https://toy-car-server-rho.vercel.app/sortByPrice/${sortPrice}?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -61,7 +63,7 @@ const MyToys = () => {
   // console.log(myToys);
   return (
     <div className="bg-slate-200">
-      <div className="overflow-x-auto w-full my-cunstom-container">
+      <div className=" w-full my-cunstom-container">
         <div className="flex items-center justify-around my-6">
           <div className="dropdown dropdown-bottom">
             <label tabIndex={0} className="btn bg-[#f65829]  m-1">

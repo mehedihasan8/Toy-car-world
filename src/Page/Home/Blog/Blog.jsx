@@ -3,7 +3,7 @@ const Blog = () => {
     <div className="bg-gray-100   ">
       <div className="my-cunstom-container py-8">
         <div className="relative md:w-[35%] mx-auto">
-          <h1 className=" text-3xl font-bold mb-10 text-center">
+          <h1 className="text-center font-extrabold text-4xl my-7">
             Welcome to My Blog
           </h1>
         </div>

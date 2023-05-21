@@ -10,7 +10,7 @@ const UpDateToy = () => {
     event.preventDefault();
 
     const form = event.target;
-    const price = form.price.value;
+    const price = parseInt(form.price.value);
     const quantity = form.quantity.value;
     const message = form.description.value;
 
@@ -29,7 +29,7 @@ const UpDateToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Update You Toy !!",
@@ -37,6 +37,7 @@ const UpDateToy = () => {
             icon: "success",
             confirmButtonText: "ok",
           });
+          form.reset();
         }
       });
 
@@ -45,7 +46,7 @@ const UpDateToy = () => {
   return (
     <div>
       <h1 className="text-center text-[#fe5724] font-extrabold text-4xl my-9">
-        UpDate Your Toy
+        Update Your Toy
       </h1>
       <div className=" border-2 border-[#f65829] rounded-md w-2/4 mx-auto mb-10">
         <form onSubmit={handleSubmit} className="max-w-xl mx-auto py-12">
@@ -60,7 +61,7 @@ const UpDateToy = () => {
               type="text"
               name="price"
               placeholder="Price"
-              className="input input-bordered w-full border-solid border-2 border-[#fe5724] "
+              className="input input-bordered w-full text-black border-solid border-2 border-[#fe5724] "
               defaultValue={price}
               required
             />
@@ -75,8 +76,8 @@ const UpDateToy = () => {
             <input
               type="number"
               name="quantity"
-              // placeholder="Available Quantity"
-              className="input input-bordered w-full border-solid border-2 border-[#fe5724]"
+              placeholder="Available Quantity"
+              className="input input-bordered w-full text-black  border-solid border-2 border-[#fe5724]"
               defaultValue={quantity}
               required
             />
@@ -90,7 +91,8 @@ const UpDateToy = () => {
             </label>
             <textarea
               name="description"
-              className="textarea textarea-bordered w-full py-12 border-solid border-2 border-[#fe5724]"
+              rows={5}
+              className="textarea textarea-bordered w-full  border-solid border-2 border-[#fe5724]"
               placeholder="Description"
               defaultValue={message}
               required

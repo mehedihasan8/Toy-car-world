@@ -28,7 +28,7 @@ const CategoryCard = ({ toy }) => {
 
         <div className="flex justify-center my-4">
           <div className="card-actions">
-            <Link to={`/toydetails/${_id}`}>
+            <Link to={`/toydetails/${_id}`} state={toyName}>
               <button className=" btn   w-full bg-[#f65829]">
                 {" "}
                 See Details

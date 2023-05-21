@@ -6,8 +6,6 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Login = () => {
   const { loginUser, handelGoogleLogin } = useContext(AuthContext);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -20,11 +18,7 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    setSuccess("");
-    setError("");
-
     if (!email || !password) {
-      setError("Provide Email or Password ");
       Swal.fire({
         title: "Provide Email or Password ",
         text: "Do you want to continue",
@@ -37,20 +31,15 @@ const Login = () => {
     if ((email, password)) {
       loginUser(email, password)
         .then((result) => {
-          toast.success("Login Successfull !", {
-            position: toast.POSITION.TOP_CENTER,
-          });
           Swal.fire({
             title: "Login Successfull !",
             text: "Do you want to continue",
             icon: "success",
             confirmButtonText: "ok",
           });
-          setSuccess("Login Successfull !");
           navigate(from, { replace: true });
         })
         .catch((error) => {
-          setError(error.message);
           Swal.fire({
             title: `${error.message}`,
             text: "Do you want to continue",
@@ -70,11 +59,9 @@ const Login = () => {
           icon: "success",
           confirmButtonText: "ok",
         });
-        setSuccess(" Login Successfull ! ");
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        setError(error.message);
         Swal.fire({
           title: `${error.message}`,
           text: "Do you want to continue",
@@ -99,7 +86,7 @@ const Login = () => {
                 </label>
                 <br />
                 <input
-                  className="email w-auto md:w-96 p-3 rounded-md mt-2 mb-6"
+                  className="email text-black w-auto md:w-96 p-3 rounded-md mt-2 mb-6"
                   type="email"
                   name="email"
                   placeholder="Enter your email"
@@ -109,15 +96,13 @@ const Login = () => {
                 <label htmlFor="">Enter You Password </label>
                 <br />
                 <input
-                  className="email md:w-96 p-3 rounded-md my-2 mb-4"
+                  className="email md:w-96 p-3 text-black rounded-md my-2 mb-4"
                   type="password"
                   name="password"
                   placeholder="Enter your password"
                 />
               </div>
-              <p className=" text-red-600 font-semibold"> {error}</p>
-              <p className="mb-3 text-emerald-600 font-semibold">{success}</p>
-              <button className="custom-btn">Login</button>
+              <button className="custom-btn mt-4">Login</button>
               <p className="p-4">
                 <small className=" font-semibold">
                   Are you new?

@@ -164,13 +164,27 @@ const NavBar = () => {
                       </li>
                       <li>
                         <NavLink
-                          to="/d"
+                          to="/alltoys"
                           className={({ isActive }) =>
                             isActive ? "active" : "default"
                           }
                         >
-                          My Toy
+                          All Toys
                         </NavLink>
+                      </li>
+                      <li>
+                        {user ? (
+                          <NavLink
+                            to="/addtoy"
+                            className={({ isActive }) =>
+                              isActive ? "active" : "default"
+                            }
+                          >
+                            Add Toy
+                          </NavLink>
+                        ) : (
+                          ""
+                        )}
                       </li>
                       <li>
                         <NavLink
