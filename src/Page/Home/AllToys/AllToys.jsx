@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import Toy from "./Toy";
 import { FaSearch } from "react-icons/fa";
-import Loadinge from "../../Sharied/Loadinge/Loadinge";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(20);
 
   useEffect(() => {
     fetch(`https://toy-car-server-rho.vercel.app/totalData?limit=${limit}`)
@@ -27,10 +26,6 @@ const AllToys = () => {
   const handelShowMoreData = () => {
     setLimit(0);
   };
-
-  if (!toys.length) {
-    return <Loadinge></Loadinge>;
-  }
 
   return (
     <div className="my-cunstom-container">

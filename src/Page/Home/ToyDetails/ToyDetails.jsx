@@ -5,7 +5,7 @@ const ToyDetails = () => {
   const carToys = useLoaderData();
   const { name, price, picture, quantity, toyName, email, rating, message } =
     carToys;
-  // console.log(carToys);
+
   return (
     <div className=" w-[95%] md:w-[85%] mx-auto py-10 md:py-20 md:flex items-center">
       <div className="md:w-1/2">

@@ -8,9 +8,9 @@ const Main = () => {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      document.title = `Car World - Home`;
+      document.title = `Car World | Home`;
     } else {
-      document.title = `Car World ${location.pathname.replace("/", "- ")}`;
+      document.title = `Car World ${location.pathname.replace("/", " | ")}`;
     }
 
     if (location.state) {

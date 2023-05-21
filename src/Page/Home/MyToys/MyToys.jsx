@@ -54,9 +54,7 @@ const MyToys = () => {
       }
     });
   };
-  if (!myToys.length) {
-    return <Loadinge></Loadinge>;
-  }
+
   return (
     <div className="bg-slate-200">
       <div className=" w-full my-cunstom-container">
